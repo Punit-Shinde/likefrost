@@ -1,0 +1,101 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  reverse?: boolean;
+}
+
+const { title, description, imageSrc, imageAlt, reverse = false } = Astro.props;
+---
+<section class="highlight-section">
+  <div class={`highlight-container ${reverse ? 'reverse' : ''}`}>
+    <div class="highlight-content">
+      <h2 class="highlight-title">{title}</h2>
+      <p class="highlight-desc">{description}</p>
+    </div>
+    <div class="highlight-visual">
+      <div class="glow-backdrop"></div>
+      <img src={imageSrc} alt={imageAlt} class="highlight-image" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .highlight-section {
+    padding: 6rem 2rem;
+    background-color: var(--bg);
+  }
+
+  .highlight-section:nth-child(even) {
+    background-color: var(--bg-darker);
+  }
+
+  .highlight-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .highlight-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .highlight-container.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .highlight-content {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .highlight-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .highlight-desc {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .highlight-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .glow-backdrop {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: var(--primary);
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    border-radius: 50%;
+    top: 10%;
+  }
+
+  .highlight-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--card-border);
+  }
+</style>

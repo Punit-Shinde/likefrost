@@ -1,0 +1,110 @@
+---
+// Header component
+---
+<header class="site-header">
+  <div class="header-container">
+    <div class="header-logo">
+      <a href="/">Likefrost</a>
+    </div>
+    
+    <nav class="header-nav">
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/docs" class="nav-link">Docs</a>
+      <a href="/vs" class="nav-link">Compare</a>
+      <a href="/faqs" class="nav-link">FAQs</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/login" class="nav-link sign-in">Sign In</a>
+      <a href="/pricing" class="btn-primary-sm">Start for Free</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14, 21, 34, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo a {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: white;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .sign-in {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .sign-in {
+      display: block;
+    }
+  }
+
+  .btn-primary-sm {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px 0 rgba(74, 179, 244, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-sm:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px 0 rgba(74, 179, 244, 0.4);
+  }
+</style>

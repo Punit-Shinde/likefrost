@@ -1,0 +1,93 @@
+---
+const modules = [
+  { name: "Likefrost Social", desc: "Content engine for creating, scheduling, and publishing posts.", icon: "📱" },
+  { name: "Likefrost Bio", desc: "Link-in-bio hub with UPI-native payment flows.", icon: "🔗" },
+  { name: "Likefrost DM", desc: "Automated comment-to-DM conversion pipeline.", icon: "💬" },
+  { name: "Likefrost Club", desc: "Subscription monetization layer for exclusive communities.", icon: "⭐" },
+  { name: "Likefrost Pitch", desc: "Media kit builder with rate calculator.", icon: "📊" },
+  { name: "Likefrost Safe", desc: "Escrow + contract engine to secure payments.", icon: "🛡️" },
+  { name: "Likefrost Brief", desc: "Scriptwriting canvas for short-form content.", icon: "📝" },
+  { name: "Likefrost Ledger", desc: "Income/expense tracker aligned with freelancer tax codes.", icon: "📒" },
+];
+---
+<section class="module-section">
+  <div class="module-header">
+    <h2 class="module-title">The <span class="text-gradient">Snowflake</span> Ecosystem</h2>
+    <p class="module-subtitle">Eight modular branches solving critical pain points for modern digital creators.</p>
+  </div>
+  
+  <div class="module-grid">
+    {modules.map(mod => (
+      <div class="module-card">
+        <div class="module-icon">{mod.icon}</div>
+        <h3 class="module-card-title">{mod.name}</h3>
+        <p class="module-card-desc">{mod.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .module-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .module-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .module-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .module-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .module-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(74, 179, 244, 0.2);
+    border-color: rgba(74, 179, 244, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .module-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 8px rgba(74, 179, 244, 0.4));
+  }
+
+  .module-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .module-card-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

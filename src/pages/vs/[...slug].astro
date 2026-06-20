@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+
+export async function getStaticPaths() {
+  const competitors = await getCollection('competitors');
+  return competitors.map((comp) => ({
+    params: { slug: comp.slug },
+    props: comp,
+  }));
+}
+type Props = CollectionEntry<'competitors'>;
+
+const competitor = Astro.props;
+const { Content } = await competitor.render();
+---
+
+<MainLayout title={`Us vs ${competitor.data.name}`} description={`A detailed comparison between Us and ${competitor.data.name}`}>
+  <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+    <h1>Us vs {competitor.data.name}</h1>
+    <ComparisonTable 
+      competitorName={competitor.data.name} 
+      features={competitor.data.features} 
+    />
+    <div class="content" style="margin-top: 2rem;">
+      <Content />
+    </div>
+  </div>
+</MainLayout>

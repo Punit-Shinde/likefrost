@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  faqSchemaData?: Array<{ q: string; a: string }>;
+}
+
+const { title, description, canonicalUrl = Astro.url.href, faqSchemaData } = Astro.props;
+
+// Programmatically build JSON-LD structure if FAQs exist on the current template route
+const jsonLdGraph = [];
+
+if (faqSchemaData) {
+  jsonLdGraph.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchemaData.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  });
+}
+---
+
+<!-- Core Crawl Properties -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Social Representation -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+
+<!-- Machine Readable Structured Payloads -->
+{jsonLdGraph.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

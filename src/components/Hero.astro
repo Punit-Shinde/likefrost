@@ -1,0 +1,444 @@
+---
+---
+<section class="hero-section" id="hero">
+  <div class="hero-sticky-inner">
+    <!-- Scattered Social Icons -->
+    <div class="scattered-icons-container" id="icon-container">
+      <div class="social-icon-wrapper" id="sw0" style="top: 12%; left: 8%;">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </div>
+      </div>
+      <div class="social-icon-wrapper" id="sw1" style="top: 18%; right: 12%;">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </div>
+      </div>
+      <div class="social-icon-wrapper" id="sw2" style="top: 55%; left: 4%;">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4l16 16M4 20L20 4"></path></svg>
+        </div>
+      </div>
+      <div class="social-icon-wrapper" id="sw3" style="top: 70%; right: 8%;">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </div>
+      </div>
+      <div class="social-icon-wrapper" id="sw4" style="top: 78%; left: 28%;">
+        <div class="social-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 6c-1-1-2.5-1-4-1-1 0-1.5.5-2 1h-2c-.5-.5-1-1-2-1-1.5 0-3 0-4 1-2 3-2 10-1 12 1.5 1.5 3 2 5 2h4c2 0 3.5-.5 5-2 1-2 1-9-1-12z"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Clarity, Resilience, <span class="text-gradient">Elegance</span>.</h1>
+      <p class="hero-subtitle">Likefrost is a next‑generation software ecosystem designed for digital creators. Experience mobile-first, culturally localized, and financially fair tools.</p>
+      <div class="hero-buttons">
+        <a href="/pricing" class="btn btn-primary">Start for Free</a>
+        
+        <div class="video-btn-wrapper">
+          <button type="button" class="btn-video" aria-label="View Demo">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="video-text">View Demo</span>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="glow-effect"></div>
+      <div class="app-window-mockup" id="app-window">
+        <div class="app-top-bar">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <div class="app-body">
+          <h3 class="app-title">Likefrost Hub</h3>
+          <div class="app-grid" id="app-grid">
+            <div class="grid-slot" id="gs0"></div>
+            <div class="grid-slot" id="gs1"></div>
+            <div class="grid-slot" id="gs2"></div>
+            <div class="grid-slot" id="gs3"></div>
+            <div class="grid-slot" id="gs4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    height: 250vh;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .hero-sticky-inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(74, 179, 244, 0.1) 0%, var(--bg) 60%);
+    overflow: hidden;
+  }
+  
+  @media (min-width: 1024px) {
+    .hero-sticky-inner {
+      flex-direction: row;
+      text-align: left;
+      padding: 6rem 4rem;
+      gap: 4rem;
+    }
+  }
+
+  .scattered-icons-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .social-icon-wrapper {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    will-change: transform;
+    transition: none;
+  }
+
+  .social-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(14, 21, 34, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--card-border);
+    color: var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-buttons {
+      justify-content: flex-start;
+    }
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 4px 20px 0 rgba(74, 179, 244, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px 0 rgba(74, 179, 244, 0.4);
+  }
+
+  .video-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .video-btn-wrapper:hover .btn-video {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-video {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .play-icon {
+    font-size: 0.8rem;
+    margin-left: 2px;
+  }
+
+  .video-text {
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      margin-top: 0;
+    }
+  }
+
+  .glow-effect {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    filter: blur(100px);
+    opacity: 0.2;
+    z-index: 0;
+    border-radius: 50%;
+  }
+
+  .app-window-mockup {
+    width: 100%;
+    background: rgba(14, 21, 34, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-top-bar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+
+  .app-body {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .grid-slot {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+  }
+</style>
+
+<script>
+  // Regular Astro script - processed by Vite, works with HMR
+  console.log("[Hero] Script loaded");
+
+  const hero = document.getElementById("hero") as HTMLElement | null;
+  const container = document.getElementById("icon-container") as HTMLElement | null;
+
+  if (!hero || !container) {
+    console.warn("[Hero] hero or container not found", { hero, container });
+  } else {
+    const wrappers: HTMLElement[] = [];
+    const slots: HTMLElement[] = [];
+    const icons: HTMLElement[] = [];
+    const startPositions: { x: number; y: number }[] = [];
+    const targetPositions: { x: number; y: number }[] = [];
+
+    for (let i = 0; i < 5; i++) {
+      const w = document.getElementById("sw" + i);
+      const s = document.getElementById("gs" + i);
+      if (w && s) {
+        wrappers.push(w);
+        slots.push(s);
+        const icon = w.querySelector(".social-icon") as HTMLElement;
+        icons.push(icon);
+
+        // Use offsetLeft/offsetTop for stable base positions
+        // These are relative to offsetParent and DON'T include transforms
+        startPositions.push({ x: w.offsetLeft, y: w.offsetTop });
+
+        // Get slot position relative to the same container
+        const containerRect = container.getBoundingClientRect();
+        const slotRect = s.getBoundingClientRect();
+        targetPositions.push({
+          x: slotRect.left - containerRect.left,
+          y: slotRect.top - containerRect.top,
+        });
+      }
+    }
+
+    console.log("[Hero] Found", wrappers.length, "pairs");
+    console.log("[Hero] Start positions:", startPositions);
+    console.log("[Hero] Target positions:", targetPositions);
+
+    if (wrappers.length > 0) {
+      let scrollCount = 0;
+      let scheduled = false;
+
+      function onScroll() {
+        scrollCount++;
+        // Log outside rAF to confirm event fires
+        if (scrollCount <= 5 || scrollCount % 50 === 0) {
+          console.log("[Hero] scroll event #" + scrollCount);
+        }
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(() => {
+          scheduled = false;
+
+          const heroRect = hero!.getBoundingClientRect();
+          let scrolled = -heroRect.top;
+          if (scrolled < 0) scrolled = 0;
+          const maxScroll = hero!.offsetHeight - window.innerHeight;
+          if (maxScroll <= 0) {
+            console.log("[Hero] maxScroll is <= 0:", maxScroll, "heroHeight:", hero!.offsetHeight, "windowH:", window.innerHeight);
+            return;
+          }
+          let t = scrolled / maxScroll;
+          if (t > 1) t = 1;
+
+          const ease = 1 - (1 - t) * (1 - t) * (1 - t);
+
+          // Log progress on first few scrolls
+          if (scrollCount <= 10) {
+            console.log("[Hero scroll]", {
+              heroTop: heroRect.top.toFixed(1),
+              scrolled: scrolled.toFixed(1),
+              maxScroll: maxScroll.toFixed(1),
+              t: t.toFixed(4),
+              ease: ease.toFixed(4),
+              transform0: `translate(${((targetPositions[0].x - startPositions[0].x) * ease).toFixed(1)}px, ${((targetPositions[0].y - startPositions[0].y) * ease).toFixed(1)}px)`,
+            });
+          }
+
+          for (let i = 0; i < wrappers.length; i++) {
+            const dx = targetPositions[i].x - startPositions[i].x;
+            const dy = targetPositions[i].y - startPositions[i].y;
+            const tx = dx * ease;
+            const ty = dy * ease;
+
+            wrappers[i].style.transform = `translate(${tx}px, ${ty}px)`;
+
+            if (icons[i]) {
+              if (t > 0.85) {
+                icons[i].style.borderColor = "transparent";
+                icons[i].style.boxShadow = "none";
+              } else {
+                icons[i].style.borderColor = "";
+                icons[i].style.boxShadow = "";
+              }
+            }
+          }
+        });
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      // Also run on resize in case positions change
+      window.addEventListener("resize", () => {
+        // Recalculate positions on resize
+        for (let i = 0; i < wrappers.length; i++) {
+          wrappers[i].style.transform = "none";
+        }
+        // Give browser a frame to settle
+        requestAnimationFrame(() => {
+          const containerRect = container!.getBoundingClientRect();
+          for (let i = 0; i < wrappers.length; i++) {
+            startPositions[i] = { x: wrappers[i].offsetLeft, y: wrappers[i].offsetTop };
+            const slotRect = slots[i].getBoundingClientRect();
+            targetPositions[i] = {
+              x: slotRect.left - containerRect.left,
+              y: slotRect.top - containerRect.top,
+            };
+          }
+          onScroll();
+        });
+      });
+      // Initial run
+      onScroll();
+    }
+  }
+</script>
+
+

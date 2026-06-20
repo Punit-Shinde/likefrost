@@ -1,0 +1,29 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const faqs = await getCollection('faqs');
+
+// Extract schema data to pass to SEO
+const faqSchemaData = faqs.map(faq => ({
+  q: faq.data.question,
+  a: faq.data.answer
+}));
+---
+
+<MainLayout 
+  title="Frequently Asked Questions" 
+  description="Find answers to common questions about our platform."
+>
+  <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+    <h1>Frequently Asked Questions</h1>
+    <dl>
+      {faqs.map(faq => (
+        <div style="margin-bottom: 1.5rem;">
+          <dt style="font-weight: bold; font-size: 1.1rem;">{faq.data.question}</dt>
+          <dd style="margin: 0.5rem 0 0 0; color: #555;">{faq.data.answer}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</MainLayout>

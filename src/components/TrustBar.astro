@@ -1,0 +1,58 @@
+---
+---
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-number">Mobile-First</span>
+    <span class="trust-label">PWA Optimized</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">0% FX Fees</span>
+    <span class="trust-label">UPI Native</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">44ADA</span>
+    <span class="trust-label">Tax Compliant</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">Secure</span>
+    <span class="trust-label">Escrow Contracts</span>
+  </div>
+</div>
+
+<style>
+  .trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    gap: 2rem;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .trust-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(90deg, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .trust-label {
+    font-size: 0.875rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+</style>

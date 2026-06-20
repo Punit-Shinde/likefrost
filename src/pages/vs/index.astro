@@ -1,0 +1,20 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const competitors = await getCollection('competitors');
+---
+
+<MainLayout title="Comparisons" description="See how we compare to the competition.">
+  <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+    <h1>Comparisons</h1>
+    <p>Check out our detailed competitor comparisons:</p>
+    <ul>
+      {competitors.map(comp => (
+        <li>
+          <a href={`/vs/${comp.slug}/`}>Us vs {comp.data.name}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</MainLayout>

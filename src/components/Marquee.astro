@@ -1,0 +1,94 @@
+---
+const items = [
+  "Creator-Centric",
+  "//",
+  "Mobile-First",
+  "//",
+  "Fair Monetization",
+  "//",
+  "Cultural Localization",
+  "//",
+  "Creator-Centric",
+  "//",
+  "Mobile-First",
+  "//",
+  "Fair Monetization",
+  "//",
+  "Cultural Localization",
+  "//",
+];
+---
+
+<section class="marquee-section">
+  <div class="marquee-container">
+    <div class="marquee-content">
+      {items.map(item => (
+        item === "//" ? 
+        <span class="marquee-separator">//</span> :
+        <span class="marquee-text">{item}</span>
+      ))}
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      {items.map(item => (
+        item === "//" ? 
+        <span class="marquee-separator">//</span> :
+        <span class="marquee-text">{item}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-section {
+    background-color: var(--bg-darker);
+    padding: 3rem 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .marquee-container {
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+    animation: scroll 20s linear infinite;
+  }
+
+  .marquee-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .marquee-separator {
+    font-size: 3rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-muted);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .marquee-text, .marquee-separator {
+      font-size: 4rem;
+    }
+    .marquee-content {
+      gap: 4rem;
+      padding-right: 4rem;
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import DocLayout from '../../layouts/DocLayout.astro';
+import { getCollection } from 'astro:content';
+
+const docs = await getCollection('docs');
+---
+
+<DocLayout title="Documentation" description="Learn how to use our platform.">
+  <div style="padding: 2rem;">
+    <h1>Documentation Hub</h1>
+    <p>Select a topic from the sidebar or choose from below:</p>
+    <ul>
+      {docs.map(doc => (
+        <li>
+          <a href={`/docs/${doc.slug}/`}>{doc.data.title}</a> - {doc.data.description}
+        </li>
+      ))}
+    </ul>
+  </div>
+</DocLayout>
